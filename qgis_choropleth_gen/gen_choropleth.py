@@ -1,3 +1,5 @@
+outputFilePath = "out.sld"
+
 bottom = 21.1
 top = 37.5
 num_classes = 50
@@ -8,6 +10,8 @@ increment = (top - bottom) / num_classes
 col_levels = num_classes / (len(colours) - 1) 
 
 col_increments = []
+
+rules = ""
 
 header = """<?xml version="1.0" encoding="UTF-8"?>
 <StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1.0" xmlns:xlink="http://www.w3.org/1999/xlink" units="mm" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd" xmlns:se="http://www.opengis.net/se">
@@ -28,8 +32,7 @@ footer = """
 
 def create_level(bot, top, colour):
     
-    return """
-        <se:Rule>
+    return """        <se:Rule>
           <se:Name> """ + str(bot) + " - " + str(top) + """ </se:Name>
           <se:Description>
             <se:Title> """ + str(bot) + " - " + str(top) + """ </se:Title>
@@ -57,9 +60,6 @@ def create_level(bot, top, colour):
             </se:Stroke>
           </se:PolygonSymbolizer>
         </se:Rule> """
-
-
-print (header)
 
 
 for i in range(len(colours) - 1):
@@ -90,9 +90,13 @@ for i in range(num_classes):
     
     i_col = int((i + 1) / col_levels)
     
-    print (create_level(val_bot, val_top, r + g + b))
+    rules = rules + create_level(val_bot, val_top, r + g + b)
     
-    
-print (footer)
-        
+
+text_file = open(outputFilePath, "w")
+text_file.write(header)
+text_file.write(rules)
+text_file.write(footer)
+text_file.close()
+
         

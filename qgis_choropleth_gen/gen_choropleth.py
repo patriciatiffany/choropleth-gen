@@ -38,10 +38,10 @@ def create_level(bot, top, colour):
           </se:Description>
           <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
             <ogc:And>
-              <ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsGreaterThanOrEqualTo>
                 <ogc:PropertyName>value</ogc:PropertyName>
                 <ogc:Literal>""" + str(bot) + """</ogc:Literal>
-              </ogc:PropertyIsGreaterThan>
+              </ogc:PropertyIsGreaterThanOrEqualTo>
               <ogc:PropertyIsLessThanOrEqualTo>
                 <ogc:PropertyName>value</ogc:PropertyName>
                 <ogc:Literal>""" + str(top) + """</ogc:Literal>

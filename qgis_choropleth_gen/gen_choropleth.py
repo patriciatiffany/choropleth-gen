@@ -91,7 +91,7 @@ def main():
     rules = ""
     
     increment = (args.top - args.bottom) / args.classes
-    col_levels = args.classes / (len(colours) - 1) 
+    col_levels = int(args.classes / (len(colours) - 1)) 
     
     for i in range(len(colours) - 1):
         
@@ -109,12 +109,9 @@ def main():
         
         num_inc = i % col_levels
         
-        try:
-            r = hex(int(colours[i_col][0] + num_inc * col_increments[i_col][0])).split('x')[1]    
-            g = hex(int(colours[i_col][1] + num_inc * col_increments[i_col][1])).split('x')[1]
-            b = hex(int(colours[i_col][2] + num_inc * col_increments[i_col][2])).split('x')[1]
-        except Exception:
-            print ("Exception: " + str(i_col) + " " + str(num_inc))
+        r = hex(int(colours[i_col][0] + num_inc * col_increments[i_col][0])).split('x')[1]    
+        g = hex(int(colours[i_col][1] + num_inc * col_increments[i_col][1])).split('x')[1]
+        b = hex(int(colours[i_col][2] + num_inc * col_increments[i_col][2])).split('x')[1]
         
         val_bot = args.bottom + i * increment 
         val_top = val_bot + increment

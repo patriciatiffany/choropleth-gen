@@ -16,6 +16,8 @@ Description
 Generates choropleths for vector files, taking into account the idiosyncrasies 
 of QGIS. They are useful, for instance, to style [HexASCII](https://github.com/ldesousa/HexAsciiBNF) rasters.
 
+
+
 Install
 -------------------------------------------------------------------------------
 

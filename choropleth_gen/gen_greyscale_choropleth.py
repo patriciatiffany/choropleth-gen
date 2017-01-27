@@ -8,7 +8,7 @@
 # Author: Luís Moreira de Sousa (luis.de.sousa[@]protonmail.ch)
 # Date: 27-01-2017
 
-from choropleth import Choropleth
+from choropleth_gen.choropleth import Choropleth
 
 class Greyscale(Choropleth):
     
@@ -40,5 +40,6 @@ class Greyscale(Choropleth):
         print ("Greyscale choropleth generated successfully.")
         
 
-g = Greyscale()
-g.run()
+def main():  
+    g = Greyscale()
+    g.run()

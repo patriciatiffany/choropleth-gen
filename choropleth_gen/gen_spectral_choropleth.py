@@ -8,7 +8,7 @@
 # Author: Luís Moreira de Sousa (luis.de.sousa[@]protonmail.ch)
 # Date: 13-01-2017 
 
-from choropleth import Choropleth
+from choropleth_gen.choropleth import Choropleth
 
 class Spectral(Choropleth):
 
@@ -53,6 +53,7 @@ class Spectral(Choropleth):
         print ("Spectral choropleth generated successfully.")
         
     
-s = Spectral()
-s.run()
+def main():    
+    s = Spectral()
+    s.run()
                 

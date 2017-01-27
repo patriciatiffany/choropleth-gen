@@ -8,7 +8,7 @@
 # Author: Luís Moreira de Sousa (luis.de.sousa[@]protonmail.ch)
 # Date: 27-01-2017
 
-from qgis_choropleth import Choropleth
+from choropleth import Choropleth
 
 class Greyscale(Choropleth):
     

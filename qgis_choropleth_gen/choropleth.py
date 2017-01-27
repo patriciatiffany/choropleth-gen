@@ -3,7 +3,7 @@
 #
 # Copyright (c) 2017 - Luís Moreira de Sousa
 #
-# Meta-class for QGis choropleths. 
+# Abstract class for QGis choropleths. 
 #
 # Author: Luís Moreira de Sousa (luis.de.sousa[@]protonmail.ch)
 # Date: 27-01-2017 

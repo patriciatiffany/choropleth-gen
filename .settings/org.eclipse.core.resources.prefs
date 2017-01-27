@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
-encoding//qgis_choropleth_gen/gen_choropleth.py=utf8
+encoding//qgis_choropleth_gen/choropleth.py=utf8
+encoding//qgis_choropleth_gen/gen_greyscale_choropleth.py=utf8
+encoding//qgis_choropleth_gen/gen_spectral_choropleth.py=utf8

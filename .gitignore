@@ -1,0 +1,4 @@
+build/
+choropleth_gen.egg-info/
+dist/
+*.sld

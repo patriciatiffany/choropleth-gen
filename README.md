@@ -32,10 +32,10 @@ The package installs two scripts in the system: `gen_greyscale_choropleth` and
 `gen_spectral_choropleth`. Both these scripts take the same arguments, 
 identified with specific flags:
 
- . `-b` - bottom value in the choropleth.
- . `-t` - top value in the choropleth.
- . `-c` - number of colour classes to generate.
- . `-o` - path to the resulting SLD file.
+ - `-b` - bottom value in the choropleth.
+ - `-t` - top value in the choropleth.
+ - `-c` - number of colour classes to generate.
+ - `-o` - path to the resulting SLD file.
  
  Example:
  

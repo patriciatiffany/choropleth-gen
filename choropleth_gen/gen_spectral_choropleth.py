@@ -16,7 +16,7 @@ class Spectral(Choropleth):
         
         args = self.setArguments()
         
-        colours = [[215, 25, 28], [254, 238, 171], [43, 131, 186]]
+        colours = [[43, 131, 186], [171, 221, 164], [254, 238, 171], [253, 174, 97], [215, 25, 28]]
         col_increments = []
         
         increment = (args.top - args.bottom) / args.classes
@@ -53,7 +53,7 @@ class Spectral(Choropleth):
         print ("Spectral choropleth generated successfully.")
         
     
-def main():    
+def main():  
     s = Spectral()
     s.run()
                 

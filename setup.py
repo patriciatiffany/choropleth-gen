@@ -5,8 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "choropleth-gen",
-    version = "0.1",
-    #packages = find_packages(),
+    version = "0.2",
     packages = ['choropleth_gen'],
     install_requires=['pyparsing',],
     entry_points={
@@ -19,7 +18,7 @@ setup(
     # metadata for upload to PyPI
     author = "Luís Moreira de Sousa",
     author_email = "luis.de.sousa@protonmail.ch",
-    description = "Utilities for ASCII encoded hexagonal grids",
+    description = "Choropleth generator for QGIS and other SLD able software.",
     license = "EUPL v1.1",
     keywords = "choropleth QGis SLD",
     url = "https://github.com/ldesousa/choropleth-gen",   # project home page, if any

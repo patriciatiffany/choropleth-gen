@@ -8,7 +8,8 @@
 # Author: Luís Moreira de Sousa (luis.de.sousa[@]protonmail.ch)
 # Date: 13-01-2017 
 
-from choropleth_gen.choropleth import Choropleth
+#from choropleth_gen.choropleth import Choropleth
+from choropleth import Choropleth
 
 class Spectral(Choropleth):
 
@@ -16,7 +17,9 @@ class Spectral(Choropleth):
         
         args = self.setArguments()
         
-        colours = [[43, 131, 186], [171, 221, 164], [254, 238, 171], [253, 174, 97], [215, 25, 28]]
+        #colours = [[43, 131, 186], [171, 221, 164], [254, 238, 171], [253, 174, 97], [215, 25, 28]]
+        #colours = [[255, 255, 204], [161, 218, 180], [65, 182, 196], [44, 127, 184], [37, 52, 148]]
+        colours = [[0, 0, 255], [51, 192, 255], [183, 255, 140], [255, 200, 0], [255, 0, 0]]
         col_increments = []
         
         increment = (args.top - args.bottom) / args.classes
@@ -42,6 +45,16 @@ class Spectral(Choropleth):
             g = hex(int(colours[i_col][1] + num_inc * col_increments[i_col][1])).split('x')[1]
             b = hex(int(colours[i_col][2] + num_inc * col_increments[i_col][2])).split('x')[1]
             
+            # Add extra character for number lower than 16
+            if (len(r) < 2):
+                r = "0" + r
+                
+            if (len(g) < 2):
+                g = "0" + g
+                
+            if (len(b) < 2):
+                b = "0" + b
+            
             val_bot = args.bottom + i * increment 
             val_top = val_bot + increment
             self.rules = self.rules + self.create_level(val_bot, val_top, r + g + b)
@@ -56,4 +69,6 @@ class Spectral(Choropleth):
 def main():  
     s = Spectral()
     s.run()
+    
+main()
                 

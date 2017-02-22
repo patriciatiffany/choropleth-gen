@@ -83,3 +83,16 @@ class Choropleth:
         text_file.write(self.rules)
         text_file.write(self.footer)
         text_file.close()
+        
+    def checkExtraChar(self, r,g,b):
+        
+        if (len(r) < 2):
+            r = "0" + r
+            
+        if (len(g) < 2):
+            g = "0" + g
+            
+        if (len(b) < 2):
+            b = "0" + b
+            
+        return r,g,b

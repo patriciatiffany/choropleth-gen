@@ -45,15 +45,7 @@ class Spectral(Choropleth):
             g = hex(int(colours[i_col][1] + num_inc * col_increments[i_col][1])).split('x')[1]
             b = hex(int(colours[i_col][2] + num_inc * col_increments[i_col][2])).split('x')[1]
             
-            # Add extra character for number lower than 16
-            if (len(r) < 2):
-                r = "0" + r
-                
-            if (len(g) < 2):
-                g = "0" + g
-                
-            if (len(b) < 2):
-                b = "0" + b
+            r,g,b = self.checkExtraChar(r,g,b)
             
             val_bot = args.bottom + i * increment 
             val_top = val_bot + increment

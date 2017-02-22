@@ -31,6 +31,8 @@ class Greyscale(Choropleth):
             r =  hex(int(colour_bottom[0] + i * col_increments[0])).split('x')[1]
             g =  hex(int(colour_bottom[1] + i * col_increments[1])).split('x')[1]
             b =  hex(int(colour_bottom[2] + i * col_increments[2])).split('x')[1]
+            
+            r,g,b = self.checkExtraChar(r,g,b)
         
             val_bot = args.bottom + i * increment 
             val_top = val_bot + increment

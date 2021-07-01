@@ -28,7 +28,7 @@ class Choropleth:
       </NamedLayer>
     </StyledLayerDescriptor>"""
     
-    def create_level(self, bot, top, colour):
+    def create_level(self, propname, bot, top, colour):
         
         return """
             <se:Rule>
@@ -39,11 +39,11 @@ class Choropleth:
               <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
                 <ogc:And>
                   <ogc:PropertyIsGreaterThanOrEqualTo>
-                    <ogc:PropertyName>value</ogc:PropertyName>
+                    <ogc:PropertyName>""" + str(propname) + """</ogc:PropertyName>
                     <ogc:Literal>""" + str(bot) + """</ogc:Literal>
                   </ogc:PropertyIsGreaterThanOrEqualTo>
                   <ogc:PropertyIsLessThanOrEqualTo>
-                    <ogc:PropertyName>value</ogc:PropertyName>
+                    <ogc:PropertyName>""" + str(propname) + """</ogc:PropertyName>
                     <ogc:Literal>""" + str(top) + """</ogc:Literal>
                   </ogc:PropertyIsLessThanOrEqualTo>
                 </ogc:And>
@@ -64,6 +64,8 @@ class Choropleth:
     def setArguments(self):
         
         parser = argparse.ArgumentParser(description='Creates a spectral choropleth for QGis.')
+        parser.add_argument("-p", "--property", dest="propertyName", default = "value",
+                          help="name of property to use for colour" )
         parser.add_argument("-b", "--bottom", dest="bottom", default = 0,
                           type=float, help="bottom scale value" )
         parser.add_argument("-t", "--top", dest="top", default = 100,

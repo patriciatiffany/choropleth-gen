@@ -46,7 +46,7 @@ class Spectral(Choropleth):
             
             val_bot = args.bottom + i * increment 
             val_top = val_bot + increment
-            self.rules = self.rules + self.create_level(val_bot, val_top, r + g + b)
+            self.rules = self.rules + self.create_level(args.propertyName, val_bot, val_top, r + g + b)
             
             i_col = int((i + 1) / col_levels)
             
